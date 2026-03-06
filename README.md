@@ -1,16 +1,152 @@
-# React + Vite
+# JSON → Code Model Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web tool that converts **JSON objects into code models** for multiple programming languages.
 
-Currently, two official plugins are available:
+Paste a JSON object, choose a target language, and instantly generate a corresponding model class or interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project demonstrates a lightweight **developer utility tool** built with React.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Paste JSON input
+- Generate models for:
+  - C#
+  - TypeScript
+  - Python
+- Copy generated code to clipboard
+- Download generated code as files (`.cs`, `.ts`, `.py`)
+- Simple and clean UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌐 Live Demo
+
+The project is deployed on **Vercel**.
+
+👉 [https://json-to-code-converter.vercel.app/](https://json-to-code-converter.vercel.app/)
+
+---
+
+## 🧠 Example
+
+### JSON Input
+
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "isActive": true
+}
+```
+
+### Generated C# Model
+```C#
+public class RootObject
+{
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public string Email { get; set; }
+  public bool IsActive { get; set; }
+}
+```
+
+### Generated TypeScript Interface
+```TypeScript
+interface RootObject {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+```
+
+### Generated Python Dataclass
+```Python
+from dataclasses import dataclass
+
+@dataclass
+class RootObject:
+    id: int
+    name: str
+    email: str
+    isActive: bool
+```
+
+---
+
+## 🛠️ Tech Stack
+
+Frontend
+
+- React
+
+- JavaScript
+
+- Bootstrap
+
+Deployment
+
+- Vercel
+
+All code generation logic runs entirely in the browser (no backend required).
+
+---
+
+## ⚙️ Installation
+Clone the repository
+```
+git clone https://github.com/Fidel-Jr/json-to-code-converter.git
+```
+Navigate into the project folder
+```
+cd json-to-code-converter
+```
+Install dependencies
+```
+npm install
+```
+Start the development server
+```
+npm start
+```
+
+---
+
+## 📁 Project Structure
+```
+src
+ ├── components
+ │    ├── JsonInput.jsx
+ │    ├── LanguageSelector.jsx
+ │    ├── CodeOutput.jsx
+ │
+ ├── utils
+ │    └── codeGenerators.js
+ │
+ ├── App.jsx
+ └── main.jsx
+```
+
+---
+
+## 🔮 Future Improvements
+This project can be extended further by adding:
+
+- Support for more programming languages (Java, Go, Kotlin, etc.)
+
+- Nested object support
+
+- Array type detection
+
+- Syntax highlighting
+
+- Additional model customization
+
+---
+
+## 📚 Article
+I also wrote a Medium article explaining the project and its development process.
+[Read here](https://your-project-name.vercel.app)
